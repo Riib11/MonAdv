@@ -8,6 +8,7 @@ module World
 , Connection(..)
 ) where
 
+------------------------------------------------------------------------------------------------------------------------------
 -- World
 
 data World = World
@@ -21,6 +22,7 @@ initWorld = World
   , time = 0
   , running = True }
 
+------------------------------------------------------------------------------------------------------------------------------
 -- Player
 
 data Player = Player
@@ -31,6 +33,7 @@ data Player = Player
 initPlayer :: Player
 initPlayer = Player "You" initLocation initInventory
 
+------------------------------------------------------------------------------------------------------------------------------
 -- Item
 
 data Item = Item
@@ -40,12 +43,15 @@ data Item = Item
 initInventory :: [Item]
 initInventory = []
 
+------------------------------------------------------------------------------------------------------------------------------
 -- Location
 
 data Location = Location
   { name  :: String
   , desc  :: String
-  , conns :: [Connection] }
+  , conns :: [Connection]
+  , items :: [Item]
+  , entities :: [Entity] }
 
 initLocation :: Location
 initLocation = Location
@@ -56,3 +62,10 @@ initLocation = Location
 data Connection = Connection
   { desc :: String
   , dest :: Location }
+
+------------------------------------------------------------------------------------------------------------------------------
+-- Entitiy
+
+data Entity = Entity
+  { name :: String
+  , desc :: String }
