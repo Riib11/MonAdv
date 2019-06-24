@@ -1,0 +1,1 @@
+stack solver --update-config
